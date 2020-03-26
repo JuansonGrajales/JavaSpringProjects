@@ -7,58 +7,42 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
+import com.test.beans.Login;
 import com.test.beans.User;
 
 /**
- * HomeController class navigates the user to the different
- * links on the navigation bar
+ * HomeController class navigates the user to the different links on the
+ * navigation bar on the homepage
+ * 
+ * @Getmapping is a shortcut annotation to @RequestMapping for get request
  */
 
 @Controller
 public class HomeController {
 
-	@GetMapping("/home")	
+	@GetMapping("/home")
 	public String goHome() {
 		System.out.println("in home controller");
 		return "index";
 	}
-	
-	@GetMapping("/goToSearch")	
+
+	@GetMapping("/goToSearch")
 	public String goToSearch() {
 		System.out.println("going to search page");
 		return "search";
 	}
-	
-	@GetMapping("/goToLogin")	
+
+	@GetMapping("/goToLogin")
 	public String goToLogin() {
 		System.out.println("going to login page");
 		return "login";
 	}
-	
-	@GetMapping("/goToRegistration")	
+
+	@GetMapping("/goToRegistration")
 	public String goToRegistration() {
 		System.out.println("going to registration page");
 		return "register";
 	}
 
-/**
- * The @ModelAttribute attached to the register.jsp needs to find 
- * an object corresponding to the ModelAttribute. If it doesn't, it will
- * not render the page correctly. Therefore getDefaultUser will provide default 
- * values for the user bean
- *
- */
-	@ModelAttribute("newuser")
-	public User getDefaultUser() {
-		return new User();
-	}
 	
-	/**
-	 * A @ModelAttribute to render default values of the gender drop down option
-	 *
-	 */
-	@ModelAttribute("genderItems")
-	public List<String> getGenderItems() {
-		return Arrays.asList( new String[] {"Male", "Female", "Other"});
-	}
 }
