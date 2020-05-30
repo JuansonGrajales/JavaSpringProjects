@@ -15,3 +15,9 @@ This project is for me to understand the fundamentals of **Spring MVC**, an esse
   * Using interceptors 
   * Defining themes 
   * Spring MVC REST controllers
+
+## To get the code:
+Clone the repository:
+```
+$ git clone
+```
