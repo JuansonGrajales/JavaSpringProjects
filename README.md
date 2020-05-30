@@ -22,3 +22,7 @@ Clone the repository:
 $ git clone https://github.com/JuansonGrajales/JavaSpringWebApp.git
 ```
 If this is your first time using Github, review https://help.github.com to learn the basics.
+
+## To run the application:
+I use Eclipse as the IDE to run my application. Right click on the project file and search for -> Run as -> SpringBoot App
+<img src="Assets/SpringBootRun.png">
