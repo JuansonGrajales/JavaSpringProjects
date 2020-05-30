@@ -19,5 +19,6 @@ This project is for me to understand the fundamentals of **Spring MVC**, an esse
 ## To get the code:
 Clone the repository:
 ```
-$ git clone
+$ git clone https://github.com/JuansonGrajales/JavaSpringWebApp.git
 ```
+If this is your first time using Github, review https://help.github.com to learn the basics.
