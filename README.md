@@ -24,10 +24,12 @@ $ git clone https://github.com/JuansonGrajales/JavaSpringWebApp.git
 If this is your first time using Github, review https://help.github.com to learn the basics.
 
 ## To run the application:
-I use Eclipse as the IDE to run my application. 
+I used Eclipse as the IDE to run my application. 
 Right click on the project file and search for -> Run as -> SpringBoot App
 
 <img src="Assets/SpringBootRun.png">
 
 Access the deployed web application at: http://localhost:8080/home/
 
+## Note:
+I used MySQL to authenticate the user's login and store product info. 
