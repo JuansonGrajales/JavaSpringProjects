@@ -10,7 +10,7 @@ This project is for me to understand the fundamentals of **Spring MVC**, an esse
   * Implementing controller flows 
   * Validating data in models 
   * Localizing error messages 
-  * Exception handling in Spring MVC 
+  * [Exception handling](https://github.com/JuansonGrajales/JavaSpringWebApp/tree/master/src/main/java/com/test/hplus/exceptions) in Spring MVC 
   * Working with view resolvers 
   * Using interceptors 
   * Defining themes 
