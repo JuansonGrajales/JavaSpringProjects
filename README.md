@@ -6,7 +6,7 @@ This project is for me to understand the fundamentals of **Spring MVC**, an esse
 
 ## Learning objectives 
   * Using Spring MVC for web projects 
-  * Spring MVC controllers 
+  * Spring MVC [controllers](https://github.com/JuansonGrajales/JavaSpringWebApp/tree/master/src/main/java/com/test/controllers) 
   * Implementing controller flows 
   * Validating data in models 
   * Localizing error messages 
