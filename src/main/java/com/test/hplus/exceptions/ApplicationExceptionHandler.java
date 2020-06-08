@@ -11,5 +11,5 @@ public class ApplicationExceptionHandler {
 		System.out.println("in global exception handler");
 		return "error";
 	}
-
+  
 }

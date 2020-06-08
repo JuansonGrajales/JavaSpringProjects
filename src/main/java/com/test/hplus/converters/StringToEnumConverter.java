@@ -15,7 +15,7 @@ public class StringToEnumConverter implements Converter<String, Gender>{
 			return Gender.FEMALE;
 		}else {
 			return Gender.OTHER;
-		}
+		}  
 	}
 
 }

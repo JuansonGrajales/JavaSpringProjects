@@ -28,7 +28,7 @@ public class LoggingInterceptor extends HandlerInterceptorAdapter{
 				+" for "+ request.getRequestURI());
 		
 		return true;
-		
+		  
 	}
 	
 	@Override
