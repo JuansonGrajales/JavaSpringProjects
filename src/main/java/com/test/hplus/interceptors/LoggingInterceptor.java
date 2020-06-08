@@ -29,4 +29,10 @@ public class LoggingInterceptor extends HandlerInterceptorAdapter{
 		return true;
 		
 	}
+	
+	@Override
+	public boolean postHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception{
+	}
+	
+	
 }
