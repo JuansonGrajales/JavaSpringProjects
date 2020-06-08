@@ -2,6 +2,9 @@ package com.test.controllers;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.Callable;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,15 +32,19 @@ public class SearchController {
 	private ProductRepository productRepository;
 	
 	@GetMapping("/search")
-	public String search(@RequestParam("search") String search, Model model) {
+	public Callable<String> search(@RequestParam("search") String search, Model model, HttpServletRequest request) {
 		System.out.println("in search controller");
 		System.out.println("Search criteria: "+search);
-		
-		List<Product> products = new ArrayList<>();
-		products = productRepository.searchByName(search);
-		model.addAttribute("products", products);
-		
-		return "search";
+		System.out.println("Async supported: "+request.isAsyncSupported());
+		System.out.println("Thread from the servlet container: "+ Thread.currentThread().getName());
+		return()->{
+			Thread.sleep(3000);
+			System.out.println("Thread from the servlet container: "+ Thread.currentThread().getName());
+			List<Product> products = new ArrayList<>();
+			products = productRepository.searchByName(search);
+			model.addAttribute("products", products);
+			return "search";
+		};
 	}
 	
 	
