@@ -21,7 +21,7 @@ public class LoggingInterceptor extends HandlerInterceptorAdapter{
 				if("JSESSIONID".equals(cookie.getName())) {
 					sessionId = cookie.getValue();
 				}
-			}
+			} 
 		}
 		
 		System.out.println("Incoming request data log: session: "+sessionId+" at "+new Date()
