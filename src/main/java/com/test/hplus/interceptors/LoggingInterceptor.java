@@ -33,7 +33,7 @@ public class LoggingInterceptor extends HandlerInterceptorAdapter{
 	
 	@Override
 	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception{
-	
+	System.out.println("In post handler");
 	}
 	
 	

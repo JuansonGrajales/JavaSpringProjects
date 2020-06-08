@@ -10,6 +10,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.format.FormatterRegistry;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.web.servlet.config.annotation.AsyncSupportConfigurer;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
@@ -17,6 +18,7 @@ import org.springframework.web.servlet.view.JstlView;
 import org.springframework.web.servlet.view.XmlViewResolver;
 
 import com.test.hplus.converters.StringToEnumConverter;
+import com.test.hplus.interceptors.LoggingInterceptor;
 
 @Configuration
 @ComponentScan(basePackages = "com.test")
@@ -64,11 +66,16 @@ public class ApplicationConfig extends WebMvcConfigurationSupport {
 		configurer.setTaskExecutor(mvcTaskExecutor());
 	}
 
-	@Bean
+	@Bean    
 	public AsyncTaskExecutor mvcTaskExecutor() {
 		ThreadPoolTaskExecutor threadPoolTaskExecutor = new ThreadPoolTaskExecutor();
 		threadPoolTaskExecutor.setThreadNamePrefix("hplusapp-thread-");
 		return threadPoolTaskExecutor;
+	} 
+	
+	@Override
+	protected void addInterceptors(InterceptorRegistry registry) {
+		registry.addInterceptor(new LoggingInterceptor()).addPathPatterns("/*");
 	}
 
 }
