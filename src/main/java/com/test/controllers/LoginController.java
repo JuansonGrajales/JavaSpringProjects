@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.test.beans.Login;
 import com.test.beans.User;
@@ -12,6 +13,7 @@ import com.test.hplus.exceptions.ApplicationException;
 import com.test.repository.UserRepository;
 
 @Controller
+@SessionAttributes("login")
 public class LoginController {
 	
 	@Autowired
@@ -24,7 +26,7 @@ public class LoginController {
 			throw new ApplicationException("User not found");
 		}
 		
-		return "search";
+		return "forward:/userprofile";
 	}
 	
 	@ExceptionHandler(ApplicationException.class)
